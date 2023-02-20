@@ -46,43 +46,53 @@ application use of the following libraries:
 
 **RESTFUL Routes**:
 
--products_handler.
--ordrers_handler.
--users_handeler.
--destroy_handler.
+- products_handler.
+- ordrers_handler.
+- users_handeler.
+- destroy_handler.
+
 **Postgres Database**:
 
--Database name : shopping.
--Database user : shopping_user.
--Tables : products - users - orders.
+- Database name : shopping.
+- Database user : shopping_user.
+- Tables : products - users - orders.
+
 **Utilites**
 
--authentication Module.
+- authentication Module.
+
 **Models**
 
--products_model.
--ordrers_model.
--users_model.
+- products_model.
+- ordrers_model.
+- users_model.
 
 ### 2. DB Creation and Migrations
 
 **DataBase**
--Database name : shopping
--DataBase Test : shopping_test
--Database user : shopping_user
+
+- Database name : shopping
+- DataBase Test : shopping_test
+- Database user : shopping_user
+
 **Code**
-CREATE USER shopping_user WITH PASSWORD 'password123';
-CREATE DATABASE shopping;
-GRANT ALL PRIVILEGES ON DATABASE shopping TO shopping_user;
-GRANT ALL ON SCHEMA PUBLIC TO shopping_user;
+
+- CREATE USER shopping_user WITH PASSWORD 'password123';
+- CREATE DATABASE shopping;
+- GRANT ALL PRIVILEGES ON DATABASE shopping TO shopping_user;
+- GRANT ALL ON SCHEMA PUBLIC TO shopping_user;
+
 **Tables Migration**
 
 - Tables : products - users - orders
+
   **Create SQL**
+
   db-migrate create products --sql-file
   db-migrate create users --sql-file
   db-migrate create orders --sql-file
   **Tables columns SQL Migration**
+  
   CREATE TABLE products (
   id SERIAL PRIMARY KEY,
   name VARCHAR(65) NOT NULL,

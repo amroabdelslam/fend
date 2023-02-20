@@ -45,17 +45,21 @@ application use of the following libraries:
 ### 1. Plan to Meet Requirements
 
 **RESTFUL Routes**:
+
 -products_handler.
 -ordrers_handler.
 -users_handeler.
 -destroy_handler.
 **Postgres Database**:
+
 -Database name : shopping.
 -Database user : shopping_user.
 -Tables : products - users - orders.
 **Utilites**
+
 -authentication Module.
 **Models**
+
 -products_model.
 -ordrers_model.
 -users_model.

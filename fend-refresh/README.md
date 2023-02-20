@@ -121,7 +121,7 @@ application use of the following libraries:
   FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
   );
-- DROP TABLE orders;
+ - DROP TABLE orders;
 
 ### 3. Models
 
@@ -197,7 +197,7 @@ One model for each database table.
 - store.delete function(delete Product by id )
 - define Products_routes as  express.Router
 
-- /* Endpoints */
+        /* Endpoints */
 - products_routes.post('/', authProcess, create);
 - products_routes.get('/', authProcess, index);
 - products_routes
@@ -222,7 +222,7 @@ One model for each database table.
 - store.delete function(delete Order by id )
 - define orders_routes as  express.Router
 
-- /* Endpoints */
+        /* Endpoints */
 - orders_routes.post('/', authProcess, create);
 - orders_routes.get('/', authProcess, index);
 - orders_routes
@@ -247,7 +247,7 @@ One model for each database table.
 - store.delete function(delete User by id )
 - store.authenticate function(authenticate user's login 
 
-- /* Endpoints */
+           /* Endpoints */
 - define users_routes as  express.Router
 - users_routes.get('/', authProcess, index);
 - users_routes.get('/:id', authProcess, show);
@@ -261,7 +261,7 @@ One model for each database table.
 
 ### 5. JWTs
 
-- /* authentication process */
+      /* authentication process */
 - authentication process with all operation by 
 - import middelware(authProcess) from '/middlewares/auth.middleware'
 - that verify token to ensure from user privileges to do this operation 
@@ -270,20 +270,20 @@ One model for each database table.
 - verifiedToken = jwt.verify(authtoken, env.TOKEN_SECRET)
 - res.locals.userData = verifiedToken;
   
-- /* Create New User and Login authentication */
+      /* Create New User and Login authentication */
 
-- hashing process >>> 
+     << hashing process >>> 
 - pepper = env.BCRYPT_PASS
 - salt= env.SALT_ROUND
 - passwordHash = bcrypt.hashSync(password + pepper,salt))
 - sql : 'INSERT INTO users(username,firstname,lastname,password) VALUES($1,$2,$3,$4) RETURNING *'
 
--login verify token >>>
+    <<login verify token >>
 -bcrypt.compareSync(U.password + env.BCRYPT_PASS, user_pass)
 
 # run Program
 
-- /*scripts*/ 
+       /*scripts*/ 
 - config.json 
 - "scripts": {
   -   "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
@@ -294,5 +294,5 @@ One model for each database table.
   - "test": "npm run build && npm run prettier && npm run lint && jasmine",
   -  "start": "nodemon src/server.ts --watch",
   -   "dev": "nodemon --exec ts-node src/server.ts"
-- in windows run cmd.exe /k " cd\ & D: & cd Program Files\PostgreSQL\15\bin\&psql -h localhost -U postgres -d postgres -p 5432"
--Then \c shopping  to show tables in shopping DATABASE after evey operation
+  - in windows run cmd.exe /k " cd\ & D: & cd Program Files\PostgreSQL\15\bin\&psql -h localhost -U postgres -d postgres -p 5432"
+  - Then \c shopping  to show tables in shopping DATABASE after evey operation
